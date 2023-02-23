@@ -1,0 +1,76 @@
+.main{
+    padding:55px 44px;
+}
+
+.lefthead{
+text-align:left;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 30px;
+/* identical to box height */
+
+
+color: #000000;
+}
+
+.signin{
+    text-align:left;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 55px;
+line-height: 70px;
+/* identical to box height */
+
+
+color: #000000;
+}
+
+
+.subtitle{
+    text-align:left;
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height */
+
+
+color: #000000;
+}
+
+.textbox{
+    text-align:left;
+    height:57px;
+}
+
+.text{
+    height:57px;
+}
+
+.forgot{
+float:right;
+width: 108px;
+height: 20px;
+
+top: 518px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 20px;
+/* identical to box height */
+
+
+color: #AD3113;
+
+}
+
+.btn{
+    margin-top:20px;
+    
+}

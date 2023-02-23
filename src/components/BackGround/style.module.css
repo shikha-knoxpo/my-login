@@ -1,0 +1,38 @@
+.main {
+  display: flex;
+}
+.left {
+  background-color: #ecbc76;
+  width: 50%;
+  height: 900px;
+}
+.right {
+  background-color: white;
+  width: 50%;
+  height: 900px;
+}
+.leftimg {
+  float: left;
+  margin-top: 193px;
+  margin-left: 181px;
+  height: 256px;
+  width: 269px;
+}
+.rightimg {
+  float: right;
+  height: 450px;
+  width: 450px;
+  margin-top: 144px;
+  margin-right: 61px;
+}
+.place {
+  position: absolute;
+  width: 539px;
+  height: 741px;
+  left: 500px;
+  top: 79px;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.08);
+  border-radius: 40px;
+}
