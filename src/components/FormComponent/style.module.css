@@ -7,11 +7,18 @@
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
-  font-size: 1.2vw;
+
+  font-size: 5vw;
+
   line-height: 20px;
   /* identical to box height */
 
   color: #000000;
+}
+@media only screen and (min-width: 768px) {
+  .lefthead {
+    font-size: 1.6vw;
+  }
 }
 
 .signin {
@@ -19,25 +26,36 @@
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
-  font-size: 3vw;
-  line-height: 4rem;
+
   
+  font-size: 10vw;
+  line-height: 4rem;
+
   /* identical to box height */
 
   color: #000000;
 }
+@media only screen and (min-width: 768px) {
+    .signin{font-size: 2.8vw;}
+    
+  }
 
 .subtitle {
   text-align: left;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
-  font-size: 1vw;
+  
+  font-size: 4vw;
   line-height: 44px;
   /* identical to box height */
 
   color: #000000;
 }
+@media only screen and (min-width: 768px) {
+    .subtitle{font-size: 1.4vw;}
+    
+  }
 
 .textbox {
   text-align: left;
@@ -50,25 +68,29 @@
 
 .forgot {
   float: right;
-  
 
   top: 518px;
 
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
-  font-size: 0.9vw;
+ 
+  font-size: 3.5vw;
   line-height: 20px;
   /* identical to box height */
 
   color: #ad3113;
 }
+@media only screen and (min-width: 768px) {
+    .forgot{font-size: 1.2vw;}
+    
+  }
 
 .btn {
   margin-top: 20px;
 }
 
-.or{
-    color:#ABABAB;
-    line-height:2rem;
+.or {
+  color: #ababab;
+  line-height: 2rem;
 }

@@ -1,0 +1,76 @@
+.main {
+    padding: 45px 25px 55px 30px;
+  }
+  
+  .lefthead {
+    text-align: left;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5vw;
+    line-height: 20px;
+    /* identical to box height */
+  
+    color: #000000;
+  }
+  @media only screen and (min-width: 768px) {
+    .lefthead {
+      font-size: 1.6vw;
+    }
+  }
+  
+  
+  .signin {
+    text-align: left;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9vw;
+    line-height: 4rem;
+    
+    /* identical to box height */
+  
+    color: #000000;
+  }
+  @media only screen and (min-width: 768px) {
+    .signin {
+      font-size: 3vw;
+    }
+  }
+ 
+  .subtitle {
+    text-align: left;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4.5vw;
+    line-height: 44px;
+    /* identical to box height */
+  
+    color: #000000;
+  }
+  @media only screen and (min-width: 768px) {
+    .subtitle {
+      font-size: 1.3vw;
+    }
+  }
+ 
+  
+  .textbox {
+    text-align: left;
+    height: 57px;
+  }
+  
+  .text {
+    height: 57px;
+  }
+  
+  
+  .btn {
+    margin-top: 20px;
+  }
+  
+  .or{
+      color:#ABABAB;
+      line-height:2rem;
+  }
