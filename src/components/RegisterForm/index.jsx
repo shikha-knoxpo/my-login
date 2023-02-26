@@ -6,10 +6,15 @@ import { InputAdornment, IconButton } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
+import {useDispatch} from 'react-redux';
+import { addUser } from "../../redux/reducer";
+import { useNavigate } from "react-router";
 
 
 export const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate =useNavigate();
+  const dispatch = useDispatch();
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
   const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -33,6 +38,9 @@ export const RegisterForm = () => {
 
   const submitLogin = (values, actions) => {
     console.log(values);
+    dispatch(addUser({...values}));
+    navigate('/login');
+    
   };    
 
   return (

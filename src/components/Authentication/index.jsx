@@ -1,11 +1,17 @@
-import { useNavigate } from "react-router";
+import { useNavigate,useLocation } from "react-router";
 import { useEffect } from "react";
 
 export const Authentication = ({children}) =>{
+    const location = useLocation()
     const navigate = useNavigate();
     useEffect(()=>{
+        console.log(location.pathname)
         if(localStorage.getItem('token')===null){
-            navigate('/login');
+            if(location.pathname==='/register')
+                navigate('/register');
+            else{
+                navigate('/login');
+            }
         }
         else{
             navigate('/dashboard')

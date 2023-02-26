@@ -10,7 +10,7 @@ export const BackGround = () => {
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 768px)'
         })
-        const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+        const isTabletOrMobile = useMediaQuery({ query: '(max-width: 767px)' })
   return (
     <>
     {isDesktopOrLaptop && <><div className={classes.main}>
@@ -18,8 +18,7 @@ export const BackGround = () => {
           <img className={classes.leftimg} src={backImg}></img>
         </div >
         <div className={classes.place} >
-          {/* <FormComponent />
-          <RegisterForm/> */}
+          
           <Outlet/>
         </div>
         <div className={classes.right} >
@@ -29,8 +28,7 @@ export const BackGround = () => {
       </div></>}
       {isTabletOrMobile && <><div className={classes.mainMobile}>
       <div className={classes.placeMobile} >
-            {/* <FormComponent />
-          <RegisterForm/> */}
+          
           <Outlet/>       </div>
         </div></>}
       
