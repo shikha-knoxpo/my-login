@@ -21,6 +21,22 @@
   }
 }
 
+.head{
+    display:flex;
+
+    gap:28%;
+    font-size:2vw;
+    text-align:right;
+
+    
+}
+@media only screen and (min-width: 768px) {
+    .head {
+      font-size: 0.8vw;
+    }
+  }
+  
+
 .signin {
   text-align: left;
   font-family: "Poppins";
@@ -53,7 +69,7 @@
   color: #000000;
 }
 @media only screen and (min-width: 768px) {
-    .subtitle{font-size: 1.4vw;}
+    .subtitle{font-size: 1vw;}
     
   }
 
@@ -82,9 +98,20 @@
   color: #ad3113;
 }
 @media only screen and (min-width: 768px) {
-    .forgot{font-size: 1.2vw;}
+    .forgot{font-size: 1vw;}
     
   }
+
+.invalid{
+    float:left;
+    font-size:3vw;
+    color:red;
+}
+@media only screen and (min-width: 768px) {
+    .invalid{font-size: 1vw;}
+    
+  }
+
 
 .btn {
   margin-top: 20px;

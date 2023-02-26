@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 
 export function getAuthToken() {
@@ -8,8 +9,11 @@ export function getAuthToken() {
   }
 }
 
-export const setToken = (name, password) => {
-  if (name === "admin@propelius.tech" && password === "123456@") {
+export function SetToken(name, password,state){
+    const isCredentialsEqual = (element) => {return(element.email===name && element.password===password)};
+
+console.log();
+  if (state.findIndex(isCredentialsEqual)!== -1) {
     localStorage.setItem("token", "abcdef");
     const expiration = new Date();
     expiration.setHours(expiration.getHours() + 1);

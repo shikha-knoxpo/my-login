@@ -10,13 +10,17 @@ import { InputAdornment, IconButton } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
-import { setToken } from "../../util/auth";
+import { SetToken } from "../../util/auth";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const FormComponent = () => {
+  const state = useSelector((state) =>state.register.user);
   const [showPassword, setShowPassword] = useState(false);
-  const navigate=useNavigate();
-  const [login,setLogin] =useState();
+  const [error,showError] = useState();
+  const navigate = useNavigate();
+  const [login, setLogin] = useState();
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
   const initialValues = {
@@ -32,15 +36,14 @@ export const FormComponent = () => {
   });
 
   const submitLogin = (values, actions) => {
-    setToken(values.email,values.password) ? setLogin(true) : setLogin(false);
-    //console.log(login)
-    if(login){
-        console.log("success");
-        navigate('/dashboard');
+    SetToken(values.email, values.password,state) ? setLogin(true) : setLogin(false);
+    if (login) {
+      navigate("/dashboard");
+      showError(false);
     }
-    
-
-
+    else{
+        showError(true);
+    }
   };
 
   const isDesktopOrLaptop = useMediaQuery({
@@ -51,8 +54,15 @@ export const FormComponent = () => {
   return (
     <>
       <div className={classes.main}>
-        <div className={classes.lefthead}>Welcome to Lorem</div>
-        <div className={classes.signin}>Sign in</div>
+        <div className={classes.head}>
+          <div>
+            <div className={classes.lefthead}>Welcome to Lorem</div>
+            <div className={classes.signin}>Sign in</div>
+          </div>
+          <div>
+            <span style={{color:'#8D8D8D'}}>No account?</span> <br/><Link to='/register'><span style={{color:'#B87514'}}> Sign Up</span></Link>
+          </div>
+        </div>
 
         {isTabletOrMobile && (
           <>
@@ -144,28 +154,28 @@ export const FormComponent = () => {
                   helperText={touched.password && errors.password}
                   InputProps={{
                     endAdornment: (
-                        <InputAdornment position="end">
-                          <IconButton
-                            aria-label="toggle password visibility"
-                            onClick={handleClickShowPassword}
-                            onMouseDown={handleMouseDownPassword}
-                          >
-                            {showPassword ? <Visibility /> : <VisibilityOff />}
-                          </IconButton>
-                        </InputAdornment>
-                      ),
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                        >
+                          {showPassword ? <Visibility /> : <VisibilityOff />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
                     inputProps: {
                       style: {
                         height: "10px",
                       },
-                    }
+                    },
                   }}
-                
                   fullWidth
                 />
               </div>
               <div className={classes.forgot}>Forgot Password?</div>
-
+              {error && <span className={classes.invalid}>Invalid ID or password</span>}
+                  <br/>
               <div className={classes.btn}>
                 <Button
                   onClick={(e) => {
@@ -178,6 +188,7 @@ export const FormComponent = () => {
                   Sign in
                 </Button>
               </div>
+              
 
               {isDesktopOrLaptop && (
                 <>

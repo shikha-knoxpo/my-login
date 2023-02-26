@@ -5,7 +5,6 @@ export const Authentication = ({children}) =>{
     const location = useLocation()
     const navigate = useNavigate();
     useEffect(()=>{
-        console.log(location.pathname)
         if(localStorage.getItem('token')===null){
             if(location.pathname==='/register')
                 navigate('/register');

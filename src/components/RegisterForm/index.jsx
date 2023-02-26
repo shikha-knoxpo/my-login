@@ -9,6 +9,7 @@ import { useState } from "react";
 import {useDispatch} from 'react-redux';
 import { addUser } from "../../redux/reducer";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 
 export const RegisterForm = () => {
@@ -37,8 +38,7 @@ export const RegisterForm = () => {
   });
 
   const submitLogin = (values, actions) => {
-    console.log(values);
-    dispatch(addUser({...values}));
+    dispatch(addUser({id:new Date().toISOString(),...values}));
     navigate('/login');
     
   };    
@@ -46,8 +46,17 @@ export const RegisterForm = () => {
   return (
     <>
       <div className={classes.main}>
-        <div className={classes.lefthead}>Welcome to Lorem</div>
-        <div className={classes.signin}>Sign up</div>
+      <div className={classes.head}>
+          <div>
+            <div className={classes.lefthead}>Welcome to Lorem</div>
+            <div className={classes.signin}>Sign Up</div>
+          </div>
+          <div>
+            <span style={{color:'#8D8D8D'}}>Have account?</span> <br/><Link to='/login'><span style={{color:'#B87514'}}> Sign In</span></Link>
+          </div>
+        </div>
+
+        
         <Formik
           enableReinitialize
           initialValues={initialValues}
