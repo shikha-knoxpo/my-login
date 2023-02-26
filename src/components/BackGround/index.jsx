@@ -4,6 +4,7 @@ import rightImg from "./asset/Saly-2.png";
 import { FormComponent } from "../FormComponent";
 import RegisterForm from "../RegisterForm";
 import { useMediaQuery } from 'react-responsive';
+import { Outlet } from "react-router";
 
 export const BackGround = () => {
     const isDesktopOrLaptop = useMediaQuery({
@@ -17,8 +18,9 @@ export const BackGround = () => {
           <img className={classes.leftimg} src={backImg}></img>
         </div >
         <div className={classes.place} >
-          {/* <FormComponent /> */}
-          <RegisterForm/>
+          {/* <FormComponent />
+          <RegisterForm/> */}
+          <Outlet/>
         </div>
         <div className={classes.right} >
           {" "}
@@ -27,9 +29,9 @@ export const BackGround = () => {
       </div></>}
       {isTabletOrMobile && <><div className={classes.mainMobile}>
       <div className={classes.placeMobile} >
-          {/* <FormComponent />  */}
-          <RegisterForm/>
-        </div>
+            {/* <FormComponent />
+          <RegisterForm/> */}
+          <Outlet/>       </div>
         </div></>}
       
     </>

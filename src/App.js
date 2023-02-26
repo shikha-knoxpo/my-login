@@ -1,16 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
-import BackGround from './components/BackGround';
 import  {  BreakpointProvider } from 'react-socks';
+import { useRoutes } from "react-router";
+import routes from "./route/routes";
+import Authentication from './components/Authentication';
+
 
 
 function App() {
+  const routing = useRoutes(routes);
+
   return (
+    
     <BreakpointProvider>
-    <div className="App">
-      <BackGround/>
-    </div>
+    <Authentication><div className="App">
+      {routing}
+    </div></Authentication>
+    
     </BreakpointProvider>
+    
   );
 }
 
